@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login form</title>
+<link rel="stylesheet" href="mystyle.css">
+<script type="text/javascript" src="mtscript.js"></script>
+</head>
+<body>
+	<div  onSubmit="return validateLoginForm(event);" class="logindivwrap" align="center">
+		<form method="post" name="loginform" action="LoginServlet">
+			<h1>Login</h1>
+			<div id="errorBox"></div>
+			<input id="icon_email" class="textbox" type="text" name="email" placeholder="Email" value="sauravsingh575@gmail.com"/><br />
+			<input id="icon_password" class="textbox" type="password" name="pass" placeholder="password" value="admin"/><br />
+
+			<button class="submitbtn" type="submit"  value="login">Login</button>
+			&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="register.html">Register</a>
+
+		</form>
+	</div>
+</body>
+</html>
