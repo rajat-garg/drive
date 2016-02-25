@@ -149,5 +149,26 @@ public class UserDatabase {
 		}
 		return null;
 	}
+	//.................. deleting file from database............................
+	public static boolean fileDelete(int userId,int file_id) {
+		boolean st = false;
+		try {
+			createConnection();
+
+			PreparedStatement ps = con
+					.prepareStatement("delete from UserData where user_id=? and file_id=?");
+			ps.setInt(1, userId);
+			ps.setInt(2, file_id);
+
+		int rs = ps.executeUpdate();
+
+			if(rs>0)
+				st=true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return st;
+	}
 
 }

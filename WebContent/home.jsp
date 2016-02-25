@@ -188,12 +188,13 @@ th { /* removed the border from the table heading row  */
 				<TH>Size</TH>
 				<TH>Upload date</TH>
 				<TH>Download</TH>
+				<TH>Delete</TH>
 			</TR>
 			<%
 				if (resultSet != null) {
 					do {
 			%>
-			
+
 			<TR>
 				<TD><%=resultSet.getString("file_name")%></TD>
 				<TD><%=resultSet.getString("file_type")%></TD>
@@ -201,10 +202,11 @@ th { /* removed the border from the table heading row  */
 					mb</TD>
 				<TD><%=resultSet.getString("created_on")%></TD>
 				<TD><a
-					href="FileDownloadServlet?file_id=<%=resultSet.getInt("file_id")%>&file_name=<%=resultSet.getString("file_name")%>">Download
-						Here</a></TD>
+					href="FileDownloadServlet?file_id=<%=resultSet.getInt("file_id")%>&file_name=<%=resultSet.getString("file_name")%>">Download</a></TD>
+				<TD><a
+					href="FileDeleteServlet?file_id=<%=resultSet.getInt("file_id")%>">Delete</a></TD>
 			</TR>
-			
+
 			<%
 				} while (resultSet.next());
 				}
