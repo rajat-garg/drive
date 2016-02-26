@@ -1,14 +1,13 @@
 <%@page import="model.User,java.sql.ResultSet,model.UserDatabase"%>
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
 	pageEncoding="US-ASCII"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Home Page</title>
 <style type="text/css">
-<
-style type ="text /css">table {
+table {
 	font-family: Comic Sans MS;
 } /* added custom font-family  */
 table.one {
@@ -16,21 +15,15 @@ table.one {
 	border-collapse: collapse;
 }
 
-td { /* removed the border from the table data rows  */
-	
-}
-
 th { /* removed the border from the table heading row  */
-	padding: .5em;
-	background-color: #999999;
-	/* added a red background color to the heading cells  */
+	padding: .4em;
+	font-weight: normal;
 	font-family: Comic Sans MS;
 	text-align: left;
-	color: white;
+	color: #1d2626;
 } /* added a white font color to the heading text */
 .CSSTableGenerator {
 	width: 50%;
-	box-shadow: 5px 5px 5px #888888;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
@@ -52,43 +45,12 @@ th { /* removed the border from the table heading row  */
 .CSSTableGenerator td {
 	vertical-align: middle;
 	background-color: #ffffff;
-	border: 1px solid #000000;
-	border-width: 0px 0px 0px 0px;
 	text-align: left;
 	padding: 5px;
-	font-size: 10px;
+	font-size: 13px;
 	font-family: Comic Sans MS;
 	font-weight: normal;
 	color: #000000;
-}
-
-.CSSTableGenerator tr:first-child td {
-	background: -o-linear-gradient(bottom, #113b66 5%, #0e4175 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #113b66
-		), color-stop(1, #0e4175));
-	background: -moz-linear-gradient(center top, #113b66 5%, #0e4175 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#113b66",
-		endColorstr="#0e4175");
-	background: -o-linear-gradient(top, #113b66, 0e4175);
-	background-color: #113b66;
-	border: 0px solid #000000;
-	text-align: center;
-	border-width: 0px 0px 1px 1px;
-	font-size: 14px;
-	font-family: Comic Sans MS;
-	font-weight: bold;
-	color: #ffffff;
-}
-
-.CSSTableGenerator tr:first-child:hover td {
-	background: -o-linear-gradient(bottom, #113b66 5%, #0e4175 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #113b66
-		), color-stop(1, #0e4175));
-	background: -moz-linear-gradient(center top, #113b66 5%, #0e4175 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#113b66",
-		endColorstr="#0e4175");
-	background: -o-linear-gradient(top, #113b66, 0e4175);
-	background-color: #113b66;
 }
 
 .titlebardivwrap {
@@ -123,7 +85,7 @@ th { /* removed the border from the table heading row  */
 .tabledivwrap {
 	width: 100%;
 	height: auto;
-	background-color: #ebebeb;
+	background-color: #f1f5f5;
 	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
 	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
 	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
@@ -139,8 +101,32 @@ th { /* removed the border from the table heading row  */
 	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
 	border: solid 1px #cbc9c9;
 }
-</style>
 
+.viewdivwrap {
+	margin: 100px auto;
+	width: 590px;
+	height: 400px;
+	-webkit-border-radius: 8px/7px;
+	-moz-border-radius: 8px/7px;
+	border-radius: 8px/7px;
+	background-color: #ebebeb;
+	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+	border: solid 1px #cbc9c9;
+}
+</style>
+<script>
+function myFunction( fileId,fileName) {
+   var oImg=document.createElement("img");
+	oImg.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName);
+	oImg.setAttribute('alt', 'na');
+	oImg.setAttribute('height', '400px');
+	oImg.setAttribute('width', '590px');
+	document.getElementById("viewimage").innerHTML = "";
+	document.getElementById("viewimage").appendChild(oImg);
+}
+</script>
 </head>
 <body>
 	<%
@@ -148,6 +134,7 @@ th { /* removed the border from the table heading row  */
 		User user = null;
 		String sessionId = null;
 		ResultSet resultSet = null;
+
 		if (session.getAttribute("user") == null) {
 			response.sendRedirect("login.html");
 		} else {
@@ -156,6 +143,7 @@ th { /* removed the border from the table heading row  */
 			resultSet = UserDatabase.displayUserData(user.getId());
 
 			sessionId = session.getId();
+
 		}
 	%>
 	<div class="titlebardivwrap" align="right">
@@ -180,39 +168,66 @@ th { /* removed the border from the table heading row  */
 			<br> <input type="submit" value="Upload">
 		</form>
 	</div>
-	<div class="tabledivwrap" align="center">
-		<TABLE class="CSSTableGenerator">
-			<TR>
-				<TH>File Name</TH>
-				<TH>Type</TH>
-				<TH>Size</TH>
-				<TH>Upload date</TH>
-				<TH>Download</TH>
-				<TH>Delete</TH>
-			</TR>
-			<%
-				if (resultSet != null) {
-					do {
-			%>
 
-			<TR>
-				<TD><%=resultSet.getString("file_name")%></TD>
-				<TD><%=resultSet.getString("file_type")%></TD>
-				<TD><%=Float.parseFloat(resultSet.getString("file_size")) / 1048576%>
-					mb</TD>
-				<TD><%=resultSet.getString("created_on")%></TD>
-				<TD><a
-					href="FileDownloadServlet?file_id=<%=resultSet.getInt("file_id")%>&file_name=<%=resultSet.getString("file_name")%>">Download</a></TD>
-				<TD><a
-					href="FileDeleteServlet?file_id=<%=resultSet.getInt("file_id")%>">Delete</a></TD>
-			</TR>
+	<div class="tabledivwrap">
+		<table style="width: 100%">
+			<tr>
+				<td style="width: 50%">
 
-			<%
-				} while (resultSet.next());
-				}
-			%>
-		</TABLE>
+					<div style="display: inline-block;">
+						<TABLE class="CSSTableGenerator" style="width: 100%">
+							<TR>
+								<TH>icon</TH>
+								<TH>File Name</TH>
+								<TH>Type</TH>
+								<TH>Size</TH>
+								<TH>Upload date</TH>
+								<TH>Download</TH>
+								<TH>Delete</TH>
+								<TH>Open</TH>
+							</TR>
+							<%
+								if (resultSet != null) {
+									do {
+							%>
+
+							<TR style="height: 40px">
+								<td><img src="images/image2.png"></td>
+								<TD><%=resultSet.getString("file_name")%></TD>
+								<TD><%=resultSet.getString("file_type")%></TD>
+								<TD><%=Float.parseFloat(resultSet.getString("file_size")) / 1048576%>
+									mb</TD>
+								<TD><%=resultSet.getString("created_on")%></TD>
+								<TD><a
+									href="FileDownloadServlet?file_id=<%=resultSet.getInt("file_id")%>&file_name=<%=resultSet.getString("file_name")%>">Download</a></TD>
+								<TD><a
+									href="FileDeleteServlet?file_id=<%=resultSet.getInt("file_id")%>">Delete</a></TD>
+								<TD><button
+										onclick="myFunction(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">open</button></TD>
+							</TR>
+
+							<%
+								} while (resultSet.next());
+								}
+							%>
+						</TABLE>
+					</div>
+				</td>
+				<td style="width: 50%; vertical-align: top">
+					<div id="viewimage" display:inline-block">
+						<!--  <img src="images/abstract-310vv.jpg"  alt="Smiley face" height="400" width="590">
+						<audio controls>
+  							<source src="horse.ogg" type="audio/ogg">
+  							<source src="songs/Sleep Away.mp3" type="audio/mpeg">
+ 							 Your browser does not support the audio tag.
+						</audio>  -->
+					</div>
+				</td>
+			</tr>
+		</table>
 	</div>
+
+
 	<div align="center" class="logoutdivwrap">
 		<form action="LogoutServlet" method="post">
 			<input type="submit" value="Logout">
