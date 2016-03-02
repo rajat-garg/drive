@@ -63,9 +63,9 @@ public class LoginServlet extends HttpServlet {
 			//rd.forward(request,response);
 		} else {
 			out.println("Username or Password incorrect");
-//			RequestDispatcher rs = request.getRequestDispatcher("login.html");
-//			rs.include(request, response);
-			response.sendRedirect("login.html");
+			RequestDispatcher rs = request.getRequestDispatcher("login.html");
+			rs.include(request, response);
+			//response.sendRedirect("login.html");
 		}
 	}
 

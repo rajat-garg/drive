@@ -6,127 +6,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Home Page</title>
-<style type="text/css">
-table {
-	font-family: Comic Sans MS;
-} /* added custom font-family  */
-table.one {
-	margin-bottom: 3em;
-	border-collapse: collapse;
-}
 
-th { /* removed the border from the table heading row  */
-	padding: .4em;
-	font-weight: normal;
-	font-family: Comic Sans MS;
-	text-align: left;
-	color: #1d2626;
-} /* added a white font color to the heading text */
-.CSSTableGenerator {
-	width: 50%;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-left-radius: 5px;
-}
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="StyleHome.css">
+<script type="text/javascript" src="HomeJs.js"></script>
 
-.CSSTableGenerator table {
-	border-collapse: collapse;
-	width: 100%;
-	height: 100%;
-	margin: 0px;
-	padding: 0px;
-}
-
-.CSSTableGenerator tr:hover td {
-	background-color: #d9d9d9;
-}
-
-.CSSTableGenerator td {
-	vertical-align: middle;
-	background-color: #ffffff;
-	text-align: left;
-	padding: 5px;
-	font-size: 13px;
-	font-family: Comic Sans MS;
-	font-weight: normal;
-	color: #000000;
-}
-
-.titlebardivwrap {
-	width: 100%;
-	height: 50px;
-	background-color: #e6e6ff;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	box-shadow: 1px 2px 10px rgba(0, 0, 0, .31);
-	border: solid 1px #cbc9c9;
-}
-
-.profiledivwrap {
-	width: 100%;
-	height: auto;
-	background-color: #ebebeb;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-}
-
-.uploaddivwrap {
-	width: 100%;
-	height: auto;
-	background-color: #ebebeb;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	border: solid 1px #cbc9c9;
-}
-
-.tabledivwrap {
-	width: 100%;
-	height: auto;
-	background-color: #f1f5f5;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	border: solid 1px #cbc9c9;
-}
-
-.logoutdivwrap {
-	width: 100%;
-	height: auto;
-	background-color: #ebebeb;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	border: solid 1px #cbc9c9;
-}
-
-.viewdivwrap {
-	margin: 100px auto;
-	width: 590px;
-	height: 400px;
-	-webkit-border-radius: 8px/7px;
-	-moz-border-radius: 8px/7px;
-	border-radius: 8px/7px;
-	background-color: #ebebeb;
-	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
-	border: solid 1px #cbc9c9;
-}
-</style>
-<script>
-function myFunction( fileId,fileName) {
-   var oImg=document.createElement("img");
-	oImg.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName);
-	oImg.setAttribute('alt', 'na');
-	oImg.setAttribute('height', '400px');
-	oImg.setAttribute('width', '590px');
-	document.getElementById("viewimage").innerHTML = "";
-	document.getElementById("viewimage").appendChild(oImg);
-}
-</script>
 </head>
 <body>
 	<%
@@ -141,9 +30,7 @@ function myFunction( fileId,fileName) {
 			user = (User) session.getAttribute("user");
 
 			resultSet = UserDatabase.displayUserData(user.getId());
-
 			sessionId = session.getId();
-
 		}
 	%>
 	<div class="titlebardivwrap" align="right">
@@ -177,14 +64,14 @@ function myFunction( fileId,fileName) {
 					<div style="display: inline-block;">
 						<TABLE class="CSSTableGenerator" style="width: 100%">
 							<TR>
-								<TH>icon</TH>
+								<TH></TH>
 								<TH>File Name</TH>
 								<TH>Type</TH>
 								<TH>Size</TH>
 								<TH>Upload date</TH>
-								<TH>Download</TH>
-								<TH>Delete</TH>
-								<TH>Open</TH>
+								<TH></TH>
+								<TH></TH>
+								<TH></TH>
 							</TR>
 							<%
 								if (resultSet != null) {
@@ -202,26 +89,64 @@ function myFunction( fileId,fileName) {
 									href="FileDownloadServlet?file_id=<%=resultSet.getInt("file_id")%>&file_name=<%=resultSet.getString("file_name")%>">Download</a></TD>
 								<TD><a
 									href="FileDeleteServlet?file_id=<%=resultSet.getInt("file_id")%>">Delete</a></TD>
+								<%
+									System.out.println(resultSet.getString("file_type"));
+								%>
+								<%
+									if (resultSet.getString("file_type").equals("image/jpeg")) {
+								%>
 								<TD><button
-										onclick="myFunction(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">open</button></TD>
-							</TR>
+										onclick="OpenImage(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">open</button></TD>
+								<TD><button type="button" class="btn btn-primary btn-sm"
+										data-toggle="modal" data-target="#myModal"
+										onclick="OpenImageModal(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">Open</button></TD>
+								<%
+									}
+								%>
+								<%
+									if (resultSet.getString("file_type").equals("audio/mp3")) {
+								%>
+								<TD><button
+										onclick="OpenAudio(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">open</button></TD>
+								<TD><button type="button" class="btn btn-primary btn-sm"
+										data-toggle="modal" data-target="#myModal"
+										onclick="OpenAudioModal(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">Open</button></TD>
+								<%
+									}
+								%>
+								<%
+									if (resultSet.getString("file_type").equals("video/mp4")) {
+								%>
+								<TD><button
+										onclick="OpenVideo(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">open</button></TD>
+								<TD><button type="button" class="btn btn-primary btn-sm"
+										data-toggle="modal" data-target="#myModal"
+										onclick="OpenVideoModal(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">Open</button></TD>
+								<%
+									}
+								%>
+								<%
+									if (resultSet.getString("file_type").equals("application/pdf")) {
+								%>
+								<TD><button
+										onclick="OpenPdf(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">open</button></TD>
+										<TD><button type="button" class="btn btn-primary btn-sm"
+										data-toggle="modal" data-target="#myModal"
+										onclick="OpenPdfModal(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>')">Open</button></TD>
+								<%
+									}
+								%>
 
-							<%
-								} while (resultSet.next());
-								}
-							%>
+								<%
+									} while (resultSet.next());
+									}
+								%>
+							
 						</TABLE>
 					</div>
 				</td>
 				<td style="width: 50%; vertical-align: top">
-					<div id="viewimage" display:inline-block">
-						<!--  <img src="images/abstract-310vv.jpg"  alt="Smiley face" height="400" width="590">
-						<audio controls>
-  							<source src="horse.ogg" type="audio/ogg">
-  							<source src="songs/Sleep Away.mp3" type="audio/mpeg">
- 							 Your browser does not support the audio tag.
-						</audio>  -->
-					</div>
+					<div id="viewimage"display:inline-block"></div>
 				</td>
 			</tr>
 		</table>
@@ -232,6 +157,29 @@ function myFunction( fileId,fileName) {
 		<form action="LogoutServlet" method="post">
 			<input type="submit" value="Logout">
 		</form>
+	</div>
+
+	<div class="container">
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" onClick="clearModalHtml()" class="close"
+							data-dismiss="modal">&times;</button>
+
+					</div>
+					<div id="modalcontent" class="modal-body"></div>
+
+				</div>
+
+			</div>
+		</div>
+
 	</div>
 
 

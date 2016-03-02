@@ -21,7 +21,7 @@ import model.UserDatabase;
  */
 @WebServlet("/FileUploadServlet")
 
-@MultipartConfig(maxFileSize = 16177215) // upload file up to 16MB
+@MultipartConfig(maxFileSize = 1073741824) // upload file up to 1GB
 public class FileUploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
