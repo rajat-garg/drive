@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.FileTypeHmap;
 import model.User;
 import model.UserDatabase;
 
@@ -52,10 +53,12 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");
 		User user;
+		FileTypeHmap fileTypeHmap = new FileTypeHmap();
 
 		if ((user = UserDatabase.checkUser(email, pass)) != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
+			session.setAttribute("fileTypeHmap", fileTypeHmap);
 			
 			response.sendRedirect("home.jsp");
 			//RequestDispatcher rd = request.getRequestDispatcher("FileDisplayServlet");

@@ -8,15 +8,14 @@
 <body>
 	<div  onSubmit="return validateLoginForm(event);" class="logindivwrap" align="center">
 		<form method="post" name="loginform" action="LoginServlet">
-			<h1>Login</h1>
+			<h1><img src="images/logo.png" alt="Smiley face" height="35" width="52">myDrive</h1>
 			<div id="errorBox"></div>
 			<input id="icon_email" class="textbox" type="text" name="email" placeholder="Email" value="sauravsingh575@gmail.com"/><br />
 			<input id="icon_password" class="textbox" type="password" name="pass" placeholder="password" value="admin"/><br />
 
 			<button class="submitbtn" type="submit"  value="login">Login</button>
-			&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a href="register.html">Register</a>
-
 		</form>
-	</div>
+	</div  >
+	<div class="logindivwrapsmall" align="center"><h4><a href="register.html">Register</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">forget password ?</a></h4></div>
 </body>
 </html>

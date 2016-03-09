@@ -40,9 +40,12 @@ public class FileDownloadServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		response.setContentType("APPLICATION/OCTET-STREAM");
+		response.setContentType(request.getParameter("mime"));
+		
+		System.out.println("MIME  : "+request.getParameter("mime"));
+		
 		OutputStream outStream = response.getOutputStream();
-		response.setHeader("Content-Disposition", "attachment; filename=\"" +request.getParameter("file_name")  + "\"");
+//		response.setHeader("Content-Disposition", "attachment; filename=\"" +request.getParameter("file_name")  + "\"");
 		InputStream inputStream; 
 
 		if (session != null) {

@@ -38,18 +38,18 @@ function OpenPdf( fileId,fileName) {
 		document.getElementById("viewimage").appendChild(oPdf);
 	}
 	
-function OpenImageModal(fileId,fileName) { 
+function OpenImageModal(fileId,fileName,fileType) { 
 	 var oImg=document.createElement("img");
-		oImg.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName);
+		oImg.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName+"&mime="+fileType);
 		oImg.setAttribute('alt', 'na');
 		oImg.style.width="100%";
 		document.getElementById("modalcontent").innerHTML = "";
 		document.getElementById("modalcontent").appendChild(oImg); 
 } 
 
-function OpenAudioModal(fileId,fileName) { 
+function OpenAudioModal(fileId,fileName,fileType) { 
 	 var oAudio=document.createElement("audio");
-		oAudio.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName);
+		oAudio.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName+"&mime="+fileType);
 		oAudio.setAttribute('type','audio/mpeg');
 		oAudio.setAttribute("controls", "controls");
 		oAudio.autoplay = true;
@@ -57,9 +57,9 @@ function OpenAudioModal(fileId,fileName) {
 		document.getElementById("modalcontent").innerHTML = "";
 		document.getElementById("modalcontent").appendChild(oAudio);
 } 
-function OpenVideoModal(fileId,fileName) { 
+function OpenVideoModal(fileId,fileName,fileType) { 
 	 var oVideo=document.createElement("video");
-	   oVideo.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName);
+	   oVideo.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName+"&mime="+fileType);
 	   oVideo.setAttribute('type','video/mp4;codecs="avc1.42E01E, mp4a.40.2"');
 	  
 	   oVideo.setAttribute("controls", "controls");
@@ -69,16 +69,34 @@ function OpenVideoModal(fileId,fileName) {
 		document.getElementById("modalcontent").appendChild(oVideo);
 } 
 
-function OpenPdfModal( fileId,fileName) {
+function OpenPdfModal( fileId,fileName,fileType) {
 	   var oPdf=document.createElement("object");
-	   oPdf.setAttribute('data', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName);
+	   oPdf.setAttribute('data', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName+"&mime="+fileType);
 	   oPdf.setAttribute('type','application/pdf');
 	   oPdf.setAttribute('width','100%');
-	   oPdf.setAttribute('height','700');
+	   oPdf.setAttribute('height','600');
 	   document.getElementById("modalcontent").innerHTML = "";
 		document.getElementById("modalcontent").appendChild(oPdf);
 	}
+
+function OpenFileModal(fileId,fileName,fileType) { 
+	 var oFile=document.createElement("IFRAME");
+	   oFile.setAttribute('src', "FileDownloadServlet?file_id="+fileId+"&file_name="+fileName+"&mime="+fileType);
+	   oFile.setAttribute('width','100%');
+	   oFile.setAttribute('height','600');
+		document.getElementById("modalcontent").innerHTML = "";
+		document.getElementById("modalcontent").appendChild(oFile);
+} 
+
 function clearModalHtml(){
 	document.getElementById("modalcontent").innerHTML = "";	
 	}
 
+function myUpload(){
+	document.getElementById("uploadBtn").click();
+	
+}
+function selectfile(e){
+	e.preventDefault();
+	document.getElementById("choosebtn").click();
+}
