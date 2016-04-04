@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
 			
 			response.sendRedirect("home.jsp");
 			//RequestDispatcher rd = request.getRequestDispatcher("FileDisplayServlet");
-			//RequestDispatcher rd = request.getRequestDispatcher("LoginSuccessful.jsp");
+			
 			//rd.forward(request,response);
 		} else {
 			out.println("Username or Password incorrect");

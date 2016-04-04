@@ -55,13 +55,15 @@ public class FileDisplayServlet extends HttpServlet {
 
 			if ((resultSet=UserDatabase.displayUserData(user.getId()))!= null) {
 				
+				
 				session.setAttribute("resultSet", resultSet);
+				//request.setAttribute("resultSet", resultSet);
 				
 				out.println("data read successfuly");
 				response.sendRedirect("home.jsp");
 				//response.sendRedirect("FileDisplayServlet");
 				
-				//RequestDispatcher rd = request.getRequestDispatcher("FileDisplayServlet");
+				//RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 				//rd.forward(request,response);
 				
 			} else {

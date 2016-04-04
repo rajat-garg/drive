@@ -29,6 +29,8 @@
 
 			fileTypeHmap = (FileTypeHmap) session.getAttribute("fileTypeHmap");
 			resultSet = UserDatabase.displayUserData(user.getId());
+			//resultSet = (ResultSet)session.getAttribute("resultSet");
+			//resultSet = (ResultSet)request.getAttribute("resultSet");
 	%>
 	<div class="divwrap" align="center">
 
@@ -182,7 +184,7 @@
 							%>
 
 							<TD><button type="button" class="btn btn-primary btn-sm"
-									data-toggle="modal" data-target="#myModal"
+									data-toggle="modal" data-target="#myModal" 
 									onclick="OpenPdfModal(<%=resultSet.getInt("file_id")%>,'<%=resultSet.getString("file_name")%>','<%=resultSet.getString("file_type")%>')">Open</button></TD>
 							<%
 								} else {
@@ -218,8 +220,8 @@
 
 
 			<!-- Modal -->
-			<div class="modal fade" id="myModal" role="dialog">
-				<div class="modal-dialog">
+			<div class="modal fade" id="myModal" role="dialog"  data-keyboard="false" data-backdrop="static">
+				<div class="modal-dialog modal-lg">
 
 					<!-- Modal content-->
 					<div class="modal-content">

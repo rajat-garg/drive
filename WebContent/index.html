@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Theme Made By www.w3schools.com - No Copyright -->
+<title>Bootstrap Theme Simply Me</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>
+body {
+	font: 20px Montserrat, sans-serif;
+	line-height: 1.8;
+	color: #f5f6f7;
+}
+
+p {
+	font-size: 16px;
+}
+
+.margin {
+	margin-bottom: 45px;
+}
+
+.bg-1 {
+	background-color: #1abc9c; /* Green */
+	background-image: url(web_background.png);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	color: #ffffff;
+	background-size: 100% auto;
+}
+
+.bg-2 {
+	background-color: #474e5d; /* Dark Blue */
+	color: #ffffff;
+}
+
+.bg-3 {
+	background-color: #ffffff; /* White */
+	color: #555555;
+}
+
+.bg-4 {
+	background-color: #2f2f2f; /* Black Gray */
+	color: #fff;
+}
+
+.container {
+	min-height: 80px;
+}
+
+.container-fluid {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.navbar {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 0;
+	font-size: 12px;
+	letter-spacing: 5px;
+}
+
+.navbar-nav  li a:hover {
+	color: #1abc9c !important;
+}
+
+.signuprow {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.loginform {
+	margin-top: 20px;
+	float: right;
+}
+</style>
+</head>
+<body>
+
+
+
+	<div class="container">
+
+
+		<div class="col-sm-4">
+			<a class="navbar-brand" href="hometemplate.html"><img
+				src="mydrive1.png" class="img-responsive  margin"
+				style="display: inline" alt="Bird" width="90" height="70">My
+				Drive</a>
+		</div>
+
+		<div class="col-sm-8">
+			<form class="form-inline loginform" role="form">
+				<div class="form-group">
+
+					<input type="email" class="form-control " id="email"
+						placeholder="email">
+				</div>
+				<div class="form-group">
+
+					<input type="password" class="form-control" id="pwd"
+						placeholder="password">
+				</div>
+
+				<button type="submit" class="btn btn-primary">Sign In</button>
+			</form>
+		</div>
+
+
+
+
+
+
+
+	</div>
+
+
+	<!-- First Container -->
+	<div class="container-fluid bg-1 ">
+
+
+
+		<div class="col-sm-8"></div>
+		<div class="col-sm-3">
+			<form method="post" name="loginform" action="LoginServlet">
+				<div class="col-sm-12 signuprow">
+					<h1>Sign Up</h1>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-6 signuprow">
+						<input type="text" class="form-control input-lg" id="usr"
+							placeholder="First name">
+					</div>
+
+					<div class="col-sm-6 signuprow">
+						<input type="text" class="form-control input-lg" id="usr"
+							placeholder="Surname">
+					</div>
+
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12 signuprow">
+						<input type="text" class="form-control input-lg" id="email"
+							placeholder="e-mail">
+					</div>
+
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12 signuprow">
+						<input type="text" class="form-control input-lg" id="re-email"
+							placeholder="Re-enter e-mail">
+					</div>
+
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12 signuprow">
+						<input type="password" class="form-control input-lg" id="pwd"
+							placeholder="new password">
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-12 signuprow">Birthday</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4 signuprow">
+						<select class="form-control input-lg">
+							<option>Day</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</select>
+					</div>
+					<div class="col-sm-4 signuprow">
+						<select class="form-control input-lg">
+							<option>Month</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</select>
+					</div>
+					<div class="col-sm-4 signuprow">
+						<select class="form-control input-lg">
+							<option>Year</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</select>
+					</div>
+
+				</div>
+
+
+
+				<div class="form-group">
+					<div class="col-sm-4 signuprow">
+						<label class="radio-inline"> <input type="radio"
+							name="optradio">male 
+					</div>
+					<div class="col-sm-8 signuprow">
+						</label> <label class="radio-inline"> <input type="radio"
+							name="optradio">female
+						</label>
+					</div>
+
+
+				</div>
+				<div class="col-sm-12 signuprow">
+					<button type="button" class="btn btn-primary btn-lg">Sign
+						Up</button>
+				</div>
+
+			</form>
+		</div>
+		<div class="col-sm-2"></div>
+
+	</div>
+
+
+
+	<!-- Second Container -->
+	<div class="container-fluid bg-2 text-center">
+		<h3 class="margin">What Am I?</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+			eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+			ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+			aliquip ex ea commodo consequat.</p>
+		<a href="#" class="btn btn-default btn-lg"> <span
+			class="glyphicon glyphicon-search"></span> Search
+		</a>
+	</div>
+
+	<!-- Third Container (Grid) -->
+	<div class="container-fluid bg-3 text-center">
+		<h3 class="margin">Where To Find Me?</h3>
+		<br>
+		<div class="row">
+			<div class="col-sm-4">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<img src="1.png" class="img-responsive margin" style="width: 100%"
+					alt="Image">
+			</div>
+			<div class="col-sm-4">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<img src="2.jpg" class="img-responsive margin" style="width: 100%"
+					alt="Image">
+			</div>
+			<div class="col-sm-4">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+					do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<img src="3.jpg" class="img-responsive margin" style="width: 100%"
+					alt="Image">
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="container-fluid bg-4 text-center">
+		<p>
+			<a href="">www.mydrive.com</a>
+		</p>
+	</footer>
+
+</body>
+</html>

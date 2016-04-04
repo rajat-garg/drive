@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Theme Made By www.w3schools.com - No Copyright -->
+<title>Bootstrap Theme Simply Me</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>
+body {
+	font: 20px Montserrat, sans-serif;
+	line-height: 1.8;
+	color: #f5f6f7;
+}
+
+p {
+	font-size: 16px;
+}
+
+.margin {
+	margin-bottom: 45px;
+}
+
+.bg-1 {
+	background-color: #1abc9c; /* Green */
+	color: #ffffff;
+}
+
+.bg-2 {
+	background-color: #474e5d; /* Dark Blue */
+	color: #ffffff;
+}
+
+.bg-3 {
+	background-color: #ffffff; /* White */
+	color: #555555;
+}
+
+.bg-4 {
+	background-color: #2f2f2f; /* Black Gray */
+	color: #fff;
+}
+
+.container {
+	height: 80px;
+}
+
+.container-fluid {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.navbar {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 0;
+	font-size: 12px;
+	letter-spacing: 5px;
+}
+
+.navbar-nav  li a:hover {
+	color: #1abc9c !important;
+}
+
+.signuprow {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.loginform {
+	margin-top: 20px;
+	float: right;
+}
+</style>
+</head>
+<body>
+
+
+
+	<div class="container">
+
+
+		<div class="col-sm-4">
+			<a class="navbar-brand" href="#"><img src="mydrive1.png"
+				class="img-responsive  margin" style="display: inline" alt="Bird"
+				width="90" height="70">My Drive</a>
+		</div>
+
+		<div class="col-sm-8">
+			<form class="form-inline loginform" role="form">
+				<div class="form-group">
+
+					<input type="email" class="form-control " id="email"
+						placeholder="email">
+				</div>
+				<div class="form-group">
+
+					<input type="password" class="form-control" id="pwd"
+						placeholder="password">
+				</div>
+
+				<button type="submit" class="btn btn-primary">Sign In</button>
+			</form>
+		</div>
+
+
+
+
+
+
+
+	</div>
+
+
+	<!-- First Container -->
+	<div class="container-fluid bg-1 ">
+
+		<div class="col-sm-6 text-center">
+			<h3 class="margin">Who Am I?</h3>
+			<img src="bat.png" class="img-responsive  margin"
+				style="display: inline" alt="Bird" width="350" height="350">
+			<h3>I'm an adventurer</h3>
+		</div>
+
+		<div class="col-sm-2"></div>
+		<div class="col-sm-3">
+			<form method="post" name="loginform" action="LoginServlet">
+				<h1>Sign Up</h1>
+
+				<div class="form-group">
+					<div class="col-sm-6 signuprow">
+						<input type="text" class="form-control input-lg" id="usr"
+							placeholder="First name">
+					</div>
+
+					<div class="col-sm-6 signuprow">
+						<input type="text" class="form-control input-lg" id="usr"
+							placeholder="Surname">
+					</div>
+
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12 signuprow">
+						<input type="text" class="form-control input-lg" id="email"
+							placeholder="e-mail">
+					</div>
+
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12 signuprow">
+						<input type="text" class="form-control input-lg" id="re-email"
+							placeholder="Re-enter e-mail">
+					</div>
+
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12 signuprow">
+						<input type="password" class="form-control input-lg" id="pwd"
+							placeholder="new password">
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<label>Birthday</label>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-4 signuprow">
+						<select class="form-control input-lg">
+							<option>Mustard</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</select>
+					</div>
+					<div class="col-sm-4 signuprow">
+						<select class="form-control input-lg">
+							<option>Mustard</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</select>
+					</div>
+					<div class="col-sm-4 signuprow">
+						<select class="form-control input-lg"><option value=""></option>
+							<option>Mustard</option>
+							<option>Ketchup</option>
+							<option>Relish</option>
+						</select>
+					</div>
+
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="radio-inline"> <input type="radio"
+						name="optradio">male
+					</label> <label class="radio-inline"> <input type="radio"
+						name="optradio">female
+					</label>
+
+				</div>
+				<button type="button" class="btn btn-primary ">Sign Up</button>
+
+			</form>
+		</div>
+		<div class="col-sm-2"></div>
+
+	</div>
+
+
+
+	<!-- Footer -->
+	<footer class="container-fluid bg-4 text-center">
+		<p>
+			Bootstrap Theme Made By <a href="http://www.w3schools.com">www.w3schools.com</a>
+		</p>
+	</footer>
+
+</body>
+</html>
